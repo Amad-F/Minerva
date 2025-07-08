@@ -92,44 +92,44 @@ Minerva is designed for:
 - University students seeking better ways to digest lecture slides.
 - Learners who want interactive revision tools.
 - Developers exploring applied LLMs and vector databases.
-- Recruiters or employers evaluating end-to-end AI projects.
+
 
 ## Tech Stack
 
-Python
+- Python
 
-Flask
+- Flask
 
-SQL Alchemy
+- SQL Alchemy
 
-LangChain (for RAG architecture)
+- LangChain (for RAG architecture)
 
-LanceDB (as vector store)
+- LanceDB (as vector store)
 
-DeepSeek APIs
+- DeepSeek APIs
 
-HTML, CSS, JavaScript (for UI)
+- HTML, CSS, JavaScript (for UI)
 
 ## Data Handling & Privacy
 All embedded content (e.g., slides) is stored locally via lancedb_data/. No user data is transmitted externally. API keys are securely handled through .env.
 
 ## Limitations & Next Steps
 
-No live PDF viewer or annotation support.
+- No live PDF viewer or annotation support.
 
-Currently single-user & single-device (not multi-session).
+- Currently single-user & single-device (not multi-session).
 
-Slide ingestion is manual (future: drag & drop + auto-ingest).
+- Slide ingestion is manual (future: drag & drop + auto-ingest).
 
 ## Planned Enhancements:
 
-Cloud deployment (e.g., Hugging Face Spaces or Render).
+- Cloud deployment (e.g., Hugging Face Spaces or Render).
 
-Streamlit or Gradio-based alternate UI.
+- Streamlit or Gradio-based alternate UI.
 
-Mobile adaptation.
+- Mobile adaptation.
 
-Peer-sharing mode for study groups.
+- Peer-sharing mode for study groups.
 
 
 ## Author
