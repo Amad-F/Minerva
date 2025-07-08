@@ -21,7 +21,6 @@ quizmaster_agent = QuizmasterAgent(rag_service)
 
 indexing_status = {"complete": False, "message": "Starting up..."}
 
-# --- Agent Definitions with Corrected .png Image Paths ---
 AGENTS = {
     "explainer": {
         "name": "The Explainer",
