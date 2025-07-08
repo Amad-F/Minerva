@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minerva - {{ agent.name }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Jura:wght@300;400;700&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="agent-page-body" data-theme="{{ agent.theme }}">
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="clouds"></div>
+    
+    <header class="agent-header">
+        <a href="/" class="back-link">&larr; Return to the Oracles</a>
+        <div class="logo">{{ agent.name }}</div>
+    </header>
+
+    <main class="agent-main">
+        {% block agent_content %}{% endblock %}
+    </main>
+    
+    <!-- Load the specific script for agent pages -->
+    {% block scripts %}
+    <script src="{{ url_for('static', filename='js/agent_page.js') }}"></script>
+    {% endblock %}
+</body>
+</html>

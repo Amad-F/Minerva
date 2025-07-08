@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
+
+<div class="content-wrapper">
+    <!-- MINERVA SECTION -->
+    <section id="about-minerva" class="content-section animated-section">
+        <div class="minerva-container">
+            <div class="minerva-icon">
+                <!-- Replaced inline SVG with an img tag for your file -->
+                <img src="{{ url_for('static', filename='images/owl.svg') }}" alt="Minerva Owl Icon" class="owl-svg">
+            </div>
+            <div class="minerva-text">
+                <h2 class="section-title">The Goddess of Wisdom</h2>
+                <p>In the mythic echoes of ancient Rome, <span class="text-gold-glow">Minerva</span> stands as a warrior with her sword drawn - as the sovereign of strategy, insight, and invention. She is the architect of intellect and wisdom, the goddess who shapes civilizations with knowledge and foresight.</p>
+                <p>Her emblem, the owl, serves as a symbol of piercing perception. One who sees what others cannot, even in the darkest unknowns. But Minerva's greatest gift was not kept to herself.</p>
+                <p>In an age where falsehood grew louder than truth, she chose to divide her divine intellect, imbuing it into three mortal vessels, beings forged not of myth, but of purpose. These became her Oracles:</p>
+                <ul class="oracle-list">
+                    <li>One to <span class="text-blue-glow">illuminate</span> knowledge,</li>
+                    <li>One to <span class="text-green-glow">distill</span> complexity,</li>
+                    <li>One to <span class="text-red-glow">challenge</span> understanding.</li>
+                </ul>
+                <p>Together, they form the Trinity of Reason - conduits of Minerva’s eternal wisdom, now reborn in digital form to guide the modern mind through the age of overwhelming information.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="agents" class="agent-selection">
+        <h2 class="section-title">Choose Your Oracle</h2>
+        <div class="agent-grid">
+            {% for key, agent in agents.items() %}
+            <div class="agent-card-container" data-color-theme="{{ agent.theme }}">
+                <a href="{{ url_for(key + '_page') }}" class="agent-card-link">
+                    <div class="agent-card">
+                        <div class="card-front">
+                            <img src="{{ url_for('static', filename=agent.image) }}" alt="{{ agent.name }}">
+                            <div class="agent-name">{{ agent.name }}</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- AUTHOR FOOTER -->
+    <footer id="about-author" class="animated-section">
+        <div class="author-container">
+            <h3 class="section-title">About the Creator</h3>
+            <p>This vessel of knowledge was forged by <strong>Amad Fareed</strong>, a developer inspired by the fusion of ancient wisdom and modern intelligence.</p>
+            <div class="social-links">
+                <a href="https://github.com/Amad-F" target="_blank" aria-label="GitHub Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/amad-fareed-308229239/" target="_blank" aria-label="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V8h3v11zM6.5 6.73c-.97 0-1.75-.78-1.75-1.73S5.53 3.27 6.5 3.27c.97 0 1.75.78 1.75 1.73S7.47 6.73 6.5 6.73zM19 19h-3v-5.6c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94V19h-3V8h2.88v1.32h.04c.4-.76 1.37-1.55 2.84-1.55 3.03 0 3.59 1.99 3.59 4.58V19z"></path></svg>
+                </a>
+            </div>
+            <p class="copyright">© 2025 Minerva AI</p>
+        </div>
+    </footer>
+</div>
+
+<div id="initial-status-data" data-complete="{{ 'true' if indexing_status.complete else 'false' }}" data-message="{{ indexing_status.message }}"></div>
+<div id="status-overlay">
+    <div class="status-content">
+        <div class="logo-status">MINERVA</div>
+        <p id="status-message">Initializing...</p>
+        <div class="loader"></div>
+        <p class="hegel-quote">"The owl of Minerva spreads its wings only with the falling of the dusk" -- Hegel</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}

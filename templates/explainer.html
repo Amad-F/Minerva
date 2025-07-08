@@ -1,0 +1,24 @@
+{% extends "agent_layout.html" %}
+{% block agent_content %}
+<div class="agent-container">
+    <div class="agent-portrait">
+        <img src="{{ url_for('static', filename=agent.image) }}" alt="{{ agent.name }}">
+        <div class="agent-description">
+            <p class="personality">{{ agent.personality }}</p>
+            <p class="task">{{ agent.task }}</p>
+        </div>
+    </div>
+    <div class="agent-interaction-panel" id="interaction-panel" data-agent-type="explainer">
+        <div id="chat-box" class="chat-box">
+             <div class="message">
+                <span class="sender">{{ agent.name }}</span>
+                I am ready to illuminate the path. What knowledge do you seek?
+            </div>
+        </div>
+        <form id="agent-form" class="input-form">
+            <input type="text" id="agent-input" placeholder="Pose your query to the oracle..." autocomplete="off">
+            <button type="submit">Inquire</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

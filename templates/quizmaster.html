@@ -1,0 +1,22 @@
+{% extends "agent_layout.html" %}
+{% block agent_content %}
+<div class="agent-container">
+    <div class="agent-portrait">
+        <img src="{{ url_for('static', filename=agent.image) }}" alt="{{ agent.name }}">
+        <div class="agent-description">
+            <p class="personality">{{ agent.personality }}</p>
+            <p class="task">{{ agent.task }}</p>
+        </div>
+    </div>
+    <div class="agent-interaction-panel" id="interaction-panel" data-agent-type="quizmaster">
+        <h2>Face the Challenge</h2>
+        <form id="agent-form" class="input-form">
+            <input type="text" id="agent-input" placeholder="What subject shall the test cover?" autocomplete="off">
+            <button type="submit">Challenge</button>
+        </form>
+        <div id="quiz-output" class="output-box">
+            <p>Declare your subject, and I shall forge a trial of intellect.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

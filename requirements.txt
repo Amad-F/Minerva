@@ -1,0 +1,11 @@
+flask
+python-dotenv
+sqlalchemy
+pymysql
+lancedb
+sentence-transformers
+torch
+litellm
+python-docx
+notebook
+python-pptx

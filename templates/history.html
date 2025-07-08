@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
+
+<div class="history-page-wrapper">
+    <!-- Chat History Table -->
+    <div class="history-container animated-section is-visible">
+        <h2>Oracle Interaction History</h2>
+        {% if interactions %}
+            <div class="history-table-wrapper">
+                <table class="history-table" id="interactions-table">
+                    <thead>
+                        <tr>
+                            <th class="col-id">ID</th>
+                            <th class="col-timestamp">Timestamp</th>
+                            <th class="col-agent">Agent</th>
+                            <th class="col-input">User Input</th>
+                            <th class="col-response">Agent Response</th>
+                            <th class="col-sources">Sources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in interactions %}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+                            <td>{{ item.agent_type.capitalize() }}</td>
+                            <td>{{ item.user_input }}</td>
+                            <td>
+                                {# The summarizer returns a JSON object, so we format it nicely. #}
+                                {% if item.agent_response is mapping %}
+                                    <strong>Overview:</strong> {{ item.agent_response.overview }}<br><br>
+                                    <strong>Key Points:</strong>
+                                    <ul>
+                                    {% for point in item.agent_response.key_points %}
+                                        <li>{{ point }}</li>
+                                    {% endfor %}
+                                    </ul>
+                                    <strong>Conclusion:</strong> {{ item.agent_response.conclusion }}
+                                {% else %}
+                                    {{ item.agent_response }}
+                                {% endif %}
+                            </td>
+                            <td>{{ (item.sources_json or [])|join(', ') }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="view-more-btn-container">
+                <button id="view-more-interactions" class="view-more-btn">View More</button>
+            </div>
+        {% else %}
+            <p style="text-align: center;">No interaction history has been recorded yet.</p>
+        {% endif %}
+    </div>
+
+    <!-- Quiz History Table -->
+    <div class="history-container animated-section is-visible">
+        <h2>Quizmaster's Archives</h2>
+        {% if quizzes %}
+            <div class="history-table-wrapper">
+                <table class="history-table" id="quizzes-table">
+                    <thead>
+                        <tr>
+                            <th class="col-id">ID</th>
+                            <th class="col-timestamp">Timestamp</th>
+                            <th class="col-topic">Topic</th>
+                            <th class="col-quiz">Quiz Content</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for quiz in quizzes %}
+                        <tr>
+                            <td>{{ quiz.id }}</td>
+                            <td>{{ quiz.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+                            <td>{{ quiz.topic }}</td>
+                            <td>
+                                <ul class="quiz-details">
+                                    {% for q in quiz.quiz_data_json %}
+                                    <li>
+                                        <strong>Q:</strong> {{ q.question }}
+                                        <em>(Correct: {{ q.correct_answer }})</em>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="view-more-btn-container">
+                <button id="view-more-quizzes" class="view-more-btn">View More</button>
+            </div>
+        {% else %}
+            <p style="text-align: center;">No quizzes have been generated yet.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{# Link to the new JavaScript file for this page's functionality #}
+<script src="{{ url_for('static', filename='js/history.js') }}"></script>
+{% endblock %}

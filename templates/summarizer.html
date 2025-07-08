@@ -1,0 +1,22 @@
+{% extends "agent_layout.html" %}
+{% block agent_content %}
+<div class="agent-container">
+    <div class="agent-portrait">
+        <img src="{{ url_for('static', filename=agent.image) }}" alt="{{ agent.name }}">
+        <div class="agent-description">
+            <p class="personality">{{ agent.personality }}</p>
+            <p class="task">{{ agent.task }}</p>
+        </div>
+    </div>
+    <div class="agent-interaction-panel" id="interaction-panel" data-agent-type="summarizer">
+        <h2>Distill Knowledge</h2>
+        <form id="agent-form" class="input-form">
+            <input type="text" id="agent-input" placeholder="What topic requires clarification?" autocomplete="off">
+            <button type="submit">Summarize</button>
+        </form>
+        <div id="summary-output" class="output-box">
+            <p>Present a topic, and I shall reveal its essence.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
