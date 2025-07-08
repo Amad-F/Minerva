@@ -107,18 +107,26 @@ HTML, CSS, JavaScript (for UI)
 All embedded content (e.g., slides) is stored locally via lancedb_data/. No user data is transmitted externally. API keys are securely handled through .env.
 
 ## Limitations & Next Steps
+
 No live PDF viewer or annotation support.
+
 Currently single-user & single-device (not multi-session).
+
 Slide ingestion is manual (future: drag & drop + auto-ingest).
 
 ## Planned Enhancements:
+
 Cloud deployment (e.g., Hugging Face Spaces or Render).
+
 Streamlit or Gradio-based alternate UI.
+
 Mobile adaptation.
+
 Peer-sharing mode for study groups.
 
 
 ## Author
+
 Amad Fareed
 📌 GitHub: @Amad-F
 🌐 LinkedIn: https://www.linkedin.com/in/amad-fareed-308229239/
