@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 from urllib.parse import urlparse, urlunparse
 from config import Config
 
-# Base class for SQLAlchemy models, will be imported by models.py
+
 Base = declarative_base()
 _engine = None
 
@@ -37,7 +37,7 @@ def get_session():
     return Session()
 
 def create_db_tables():
-    # Import models here to ensure they are registered with Base
+    
     from models import AgentInteraction, GeneratedQuiz
     engine = get_engine()
     try:
