@@ -32,6 +32,7 @@ This project was created as a proof-of-concept for AI-enabled learning. The syst
 ## Project Structure
 
 <pre> ``` Minerva/ 
+  
   ├── app.py # Entry point – Flask app routes 
   ├── agents.py # Agent definitions and behavior 
   ├── rag_system.py # RAG-based response pipeline 
@@ -53,40 +54,11 @@ This project was created as a proof-of-concept for AI-enabled learning. The syst
   │ ├── agent_page.js 
   │ └── history.js 
   │ ├── requirements.txt # Python dependencies 
+  
   ├── run_minerva.bat # Windows run script 
   ├── .env # Local environment variables (not tracked) 
   ├── .gitignore # Git exclusions 
   ├── README.md # Project documentation (this file) ``` </pre>
-
-Minerva/
-
-app.py # Entry point - Flask app routes
-
-agents.py # Agent definitions and behavior
-
-rag_system.py # RAG-based response pipeline
-
-models.py # LLM models and prompts
-
-config.py # Configuration and secrets
-
-database.py # LanceDB setup and document ingestion
-
-
-templates/ # HTML templates for web UI
-
-static/ # CSS and JS files
-
-lancedb_data/ # Vector database (embeddings stored here)
-
-
-requirements.txt # Python dependencies
-
-run_minerva.bat # Local run script (Windows)
-
-.env # API keys and secrets (not tracked)
-
-.gitignore # Git exclusions
 
 ---
 
