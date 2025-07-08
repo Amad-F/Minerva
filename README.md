@@ -1,4 +1,4 @@
-# Minerva – An AI-Powered Academic Companion
+# Minerva (An AI-Powered Academic Companion)
 
 **Minerva** is a personal AI tutoring system that ingests and analyzes university lecture slides to help students understand, summarize, and self-assess their knowledge through intelligent question-answering. Designed as an end-to-end academic assistant, Minerva combines the power of Retrieval-Augmented Generation (RAG), vector embeddings, and language models to transform passive reading into active learning.
 
@@ -32,27 +32,26 @@ This project was created as a proof-of-concept for AI-enabled learning. The syst
 ## Project Structure
 
 Minerva/
-│
 
-├── app.py # Entry point - Flask app routes
-├── agents.py # Agent definitions and behavior
-├── rag_system.py # RAG-based response pipeline
-├── models.py # LLM models and prompts
-├── config.py # Configuration and secrets
-├── database.py # LanceDB setup and document ingestion
-│
+app.py # Entry point - Flask app routes
+agents.py # Agent definitions and behavior
+rag_system.py # RAG-based response pipeline
+models.py # LLM models and prompts
+config.py # Configuration and secrets
+database.py # LanceDB setup and document ingestion
 
-├── templates/ # HTML templates for web UI
 
-├── static/ # CSS and JS files
+templates/ # HTML templates for web UI
 
-├── lancedb_data/ # Vector database (embeddings stored here)
-│
+static/ # CSS and JS files
 
-├── requirements.txt # Python dependencies
-├── run_minerva.bat # Local run script (Windows)
-├── .env # API keys and secrets (not tracked)
-├── .gitignore # Git exclusions
+lancedb_data/ # Vector database (embeddings stored here)
+
+
+requirements.txt # Python dependencies
+run_minerva.bat # Local run script (Windows)
+.env # API keys and secrets (not tracked)
+.gitignore # Git exclusions
 
 ---
 
