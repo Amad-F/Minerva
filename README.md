@@ -6,13 +6,13 @@
 
 ## Project Overview
 
-Minerva was built as a **personal AI agent** with three primary capabilities:
+Minerva was built as a personal AI agent with three primary capabilities:
 
 1. **Summarizer** – distills dense academic slides into concise, digestible summaries.
 2. **Quizmaster** – generates intelligent, context-aware questions to test comprehension.
 3. **Explainer** – answers queries directly from your uploaded content using semantic search + LLMs.
 
-This project was created as a **proof-of-concept for AI-enabled learning**. The system is modular, extensible, and locally deployable with pre-loaded slide embeddings.
+This project was created as a proof-of-concept for AI-enabled learning. The system is modular, extensible, and locally deployable with pre-loaded slide embeddings.
 
 ---
 
@@ -33,6 +33,7 @@ This project was created as a **proof-of-concept for AI-enabled learning**. The 
 
 Minerva/
 │
+
 ├── app.py # Entry point - Flask app routes
 ├── agents.py # Agent definitions and behavior
 ├── rag_system.py # RAG-based response pipeline
@@ -40,10 +41,14 @@ Minerva/
 ├── config.py # Configuration and secrets
 ├── database.py # LanceDB setup and document ingestion
 │
+
 ├── templates/ # HTML templates for web UI
+
 ├── static/ # CSS and JS files
+
 ├── lancedb_data/ # Vector database (embeddings stored here)
 │
+
 ├── requirements.txt # Python dependencies
 ├── run_minerva.bat # Local run script (Windows)
 ├── .env # API keys and secrets (not tracked)
@@ -56,7 +61,6 @@ Minerva/
 > Recommended: Python 3.10+ and pip
 
 1. **Clone the repository**
-
 git clone https://github.com/Amad-F/Minerva.git
 cd Minerva
 
@@ -86,10 +90,17 @@ Minerva is designed for:
 ## Tech Stack
 
 Python
+
 Flask
+
+SQL Alchemy
+
 LangChain (for RAG architecture)
+
 LanceDB (as vector store)
+
 DeepSeek APIs
+
 HTML, CSS, JavaScript (for UI)
 
 ## Data Handling & Privacy
