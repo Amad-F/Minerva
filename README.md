@@ -31,7 +31,32 @@ This project was created as a proof-of-concept for AI-enabled learning. The syst
 
 ## Project Structure
 
-<pre> ``` Minerva/ ├── app.py # Entry point – Flask app routes ├── agents.py # Agent definitions and behavior ├── rag_system.py # RAG-based response pipeline ├── models.py # LLM prompts and agent configurations ├── config.py # API keys, settings, constants ├── database.py # LanceDB setup and document ingestion │ ├── lancedb_data/ # Local vector database (38MB included) │ ├── templates/ # HTML templates for each oracle (Summarizer, Quizmaster, Explainer, etc.) │ ├── index.html │ ├── summarizer.html │ ├── quizmaster.html │ ├── explainer.html │ └── history.html │ ├── static/ # Static assets │ ├── style.css │ ├── main.js │ ├── agent_page.js │ └── history.js │ ├── requirements.txt # Python dependencies ├── run_minerva.bat # Windows run script ├── .env # Local environment variables (not tracked) ├── .gitignore # Git exclusions ├── README.md # Project documentation (this file) ``` </pre>
+<pre> ``` Minerva/ 
+  ├── app.py # Entry point – Flask app routes 
+  ├── agents.py # Agent definitions and behavior 
+  ├── rag_system.py # RAG-based response pipeline 
+  ├── models.py # LLM prompts and agent configurations 
+  ├── config.py # API keys, settings, constants 
+  ├── database.py # LanceDB setup and document ingestion 
+  ├── lancedb_data/ # Local vector database (38MB included) 
+  
+  ├── templates/ # HTML templates for each oracle (Summarizer, Quizmaster, Explainer, etc.) 
+  │ ├── index.html 
+  │ ├── summarizer.html 
+  │ ├── quizmaster.html 
+  │ ├── explainer.html 
+  │ └── history.html  
+  
+  ├── static/ # Static assets 
+  │ ├── style.css 
+  │ ├── main.js 
+  │ ├── agent_page.js 
+  │ └── history.js 
+  │ ├── requirements.txt # Python dependencies 
+  ├── run_minerva.bat # Windows run script 
+  ├── .env # Local environment variables (not tracked) 
+  ├── .gitignore # Git exclusions 
+  ├── README.md # Project documentation (this file) ``` </pre>
 
 Minerva/
 
