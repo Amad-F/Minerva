@@ -31,7 +31,9 @@ This project was created as a proof-of-concept for AI-enabled learning. The syst
 
 ## Project Structure
 
-<pre> ``` Minerva/ 
+<pre> 
+
+Minerva/ 
   
   ├── app.py # Entry point – Flask app routes 
   ├── agents.py # Agent definitions and behavior 
@@ -58,7 +60,9 @@ This project was created as a proof-of-concept for AI-enabled learning. The syst
   ├── run_minerva.bat # Windows run script 
   ├── .env # Local environment variables (not tracked) 
   ├── .gitignore # Git exclusions 
-  ├── README.md # Project documentation (this file) ``` </pre>
+  ├── README.md # Project documentation (this file) 
+
+</pre>
 
 ---
 
