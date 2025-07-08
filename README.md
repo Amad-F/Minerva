@@ -34,10 +34,15 @@ This project was created as a proof-of-concept for AI-enabled learning. The syst
 Minerva/
 
 app.py # Entry point - Flask app routes
+
 agents.py # Agent definitions and behavior
+
 rag_system.py # RAG-based response pipeline
+
 models.py # LLM models and prompts
+
 config.py # Configuration and secrets
+
 database.py # LanceDB setup and document ingestion
 
 
@@ -49,8 +54,11 @@ lancedb_data/ # Vector database (embeddings stored here)
 
 
 requirements.txt # Python dependencies
+
 run_minerva.bat # Local run script (Windows)
+
 .env # API keys and secrets (not tracked)
+
 .gitignore # Git exclusions
 
 ---
@@ -127,7 +135,9 @@ Peer-sharing mode for study groups.
 ## Author
 
 Amad Fareed
+
 📌 GitHub: @Amad-F
+
 🌐 LinkedIn: https://www.linkedin.com/in/amad-fareed-308229239/
 
 ## Feedback & Contributions
